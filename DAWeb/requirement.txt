@@ -1,0 +1,4 @@
+djangorestframework
+psycopg2
+djangorestframework-simplejwt
+requests
