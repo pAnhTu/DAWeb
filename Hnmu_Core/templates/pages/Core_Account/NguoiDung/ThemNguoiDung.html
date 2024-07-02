@@ -1,0 +1,54 @@
+{% extends 'components/Master_Page.html' %}
+{% block title %}ThemNguoiDung{% endblock %}
+
+{% block content %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    .form-control {
+        /* Your styling here */
+    }
+    .error {
+        color: red;
+    }
+</style>
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <h1>Thêm Người Dùng</h1>
+    <form id="nguoidung-form" method="post" action="/Account/ThemNguoiDung/">
+        {% csrf_token %}
+
+        <h2>Personal Information</h2>
+        {{ users_form.as_p }}
+
+        <button type="submit" id="submit-btn">Submit</button>
+    </form>
+
+    <script>
+<!--        $(document).ready(function() {-->
+<!--            $('#nguoidung-form').submit(function(event) {-->
+<!--                event.preventDefault(); // Ngăn chặn gửi mặc định của biểu mẫu-->
+
+<!--                // Lấy dữ liệu từ biểu mẫu-->
+<!--                var formData = $(this).serialize();-->
+
+<!--                // Gửi yêu cầu AJAX-->
+<!--                window.location.href = '/Account/ThemNguoiDung/';-->
+<!--&lt;!&ndash;                $.ajax({&ndash;&gt;-->
+<!--&lt;!&ndash;                    url: "/Account/ThemNguoiDung/", // URL endpoint&ndash;&gt;-->
+<!--&lt;!&ndash;                    method: "POST", // Phương thức POST&ndash;&gt;-->
+<!--&lt;!&ndash;                    data: formData, // Dữ liệu biểu mẫu&ndash;&gt;-->
+<!--&lt;!&ndash;                    success: function(response) {&ndash;&gt;-->
+<!--&lt;!&ndash;                        // Xử lý phản hồi ở đây&ndash;&gt;-->
+<!--&lt;!&ndash;                        $("#popup-content").html(response); // Đặt nội dung nhận được từ AJAX vào popup&ndash;&gt;-->
+<!--&lt;!&ndash;                        console.log(response);&ndash;&gt;-->
+<!--&lt;!&ndash;                    },&ndash;&gt;-->
+<!--&lt;!&ndash;                    error: function(xhr, status, error) {&ndash;&gt;-->
+<!--&lt;!&ndash;                        console.error("Error:", error);&ndash;&gt;-->
+<!--&lt;!&ndash;                    }&ndash;&gt;-->
+<!--&lt;!&ndash;                });&ndash;&gt;-->
+<!--            });-->
+<!--        });-->
+    </script>
+
+{% endblock %}

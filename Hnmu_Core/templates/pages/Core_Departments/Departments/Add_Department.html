@@ -1,0 +1,12 @@
+{% extends 'components/Master_Page.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <h1>Thêm Nhóm</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Lưu</button>
+    </form>
+{% endblock %}

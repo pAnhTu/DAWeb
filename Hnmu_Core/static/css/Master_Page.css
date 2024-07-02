@@ -1,0 +1,60 @@
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Ẩn thanh trượt ngang nếu có */
+}
+
+/* Container for the page */
+.container {
+    display: flex;
+    max-width: 100%; /* Chiều rộng tối đa là 100% của màn hình */
+    height: 100vh; /* Chiều cao là 100% chiều cao của viewport */
+    margin: 0 auto;
+}
+
+/* Vertical menu styling */
+.menu {
+    flex: 0 0 200px; /* Fixed width for the menu */
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    height: 100%; /* Đảm bảo menu cao bằng với container */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+}
+
+/* Content area styling */
+.content {
+    flex: 1; /* Take remaining space */
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung quá dài */
+}
+
+/* Menu links styling */
+.menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+/* Heading style */
+h1 {
+    color: #333;
+}
